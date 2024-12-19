@@ -4,6 +4,10 @@
 
 - 예제:
 
+```bash
+python find_native_python.py /home/sandbox/python
+```
+
 ```python
 if __name__ == "__main__" :
     # Getting a project directory as a command line factor
