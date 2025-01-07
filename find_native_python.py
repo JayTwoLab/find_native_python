@@ -1,6 +1,9 @@
 # -*- coding: utf-8 -*- 
 
+##########################
+# https://github.com/j2doll/find_native_python
 # find_native_python.py
+##########################
 
 import os
 import sys
