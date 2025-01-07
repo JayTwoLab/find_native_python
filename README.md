@@ -2,11 +2,13 @@
 
 - 파이썬 소스코드를 검색하여, 네이티브 패키지를 사용하는지 여부를 검사
 
-- 예제:
+- 사용 방법: 
 
 ```bash
 python find_native_python.py /home/sandbox/python
 ```
+
+- 코드
 
 ```python
 if __name__ == "__main__" :
