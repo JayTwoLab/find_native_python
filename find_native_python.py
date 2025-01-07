@@ -1,9 +1,12 @@
 
 # find_native_python.py
 
+import os
+import sys
 import ast
 
 # AST Analysis Function
+"""
 def analyze_python_file(filepath):
     with open(filepath, 'r', encoding='utf-8') as file:
         tree = ast.parse(file.read(), filename=filepath)
@@ -15,6 +18,21 @@ def analyze_python_file(filepath):
             if func_name in ['CDLL', 'windll', 'cdll', 'FFI', 'system', 'Popen', 'run']:
                 findings.append((func_name, node.lineno))
     return findings
+"""
+def analyze_python_file(filepath):
+    findings = []
+    try:
+        with open(filepath, 'r', encoding='utf-8') as file:
+            tree = ast.parse(file.read(), filename=filepath)
+        for node in ast.walk(tree):
+            if isinstance(node, ast.Call):
+                func_name = getattr(node.func, 'id', None) or getattr(node.func, 'attr', None)
+                if func_name in ['CDLL', 'windll', 'cdll', 'FFI', 'system', 'Popen', 'run']:
+                    findings.append((func_name, node.lineno))
+    except (SyntaxError, UnicodeDecodeError) as e:
+        print(f"Error analyzing {filepath}: {e}")
+    return findings
+
 
 # Directory scanning
 def analyze_directory(directory):
@@ -27,6 +45,7 @@ def analyze_directory(directory):
                 if findings:
                     results[filepath] = findings
     return results
+
 
 
 if __name__ == "__main__" :
