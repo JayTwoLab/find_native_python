@@ -11,7 +11,7 @@
 python find_native_python.py /home/sandbox/python
 ```
 
-- 코드
+- 코드 (main 함수)
 
 ```python
 if __name__ == "__main__" :
