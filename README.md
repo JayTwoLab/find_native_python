@@ -1,5 +1,7 @@
 # find_native_python
 
+> [English](README.En.md) , [Korean](README.md)
+
 - 파이썬 소스코드를 검색하여, 네이티브 패키지(`native package`)를 사용하는지 여부를 검사
 
 - 사용 방법:
