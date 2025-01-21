@@ -2,7 +2,7 @@
 
 > [English](README.En.md) , [Korean](README.md)
 
-- Search Python source code to see if you are using a native package
+- Search Python source code to see if you are using a native package.
 - How to use:
    - Examines whether Python files in path `/home/sandbox/python` use native packages.
 
